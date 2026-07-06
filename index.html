@@ -26,7 +26,6 @@
             margin: 0 auto;
         }
 
-        /* Header */
         .header {
             background: linear-gradient(145deg, #4b1dd6, #7f3eff);
             border-radius: 32px;
@@ -118,16 +117,6 @@
             transform: scale(1.05);
         }
 
-        .btn-danger {
-            background: #e74c3c;
-            color: #fff;
-        }
-
-        .btn-danger:hover {
-            background: #c0392b;
-            transform: scale(1.05);
-        }
-
         .btn-warning {
             background: #f39c12;
             color: #fff;
@@ -138,7 +127,6 @@
             transform: scale(1.05);
         }
 
-        /* Controls */
         .controls {
             background: #fff;
             border-radius: 24px;
@@ -212,7 +200,6 @@
             border-color: #4b1dd6;
         }
 
-        /* Stats */
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -267,7 +254,6 @@
             font-weight: 500;
         }
 
-        /* Icon Grid */
         .icon-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -388,7 +374,6 @@
             opacity: 1;
         }
 
-        /* Selected Actions */
         .selected-actions {
             background: #fff;
             border-radius: 24px;
@@ -415,7 +400,6 @@
             color: #4b1dd6;
         }
 
-        /* Loading */
         .loading {
             text-align: center;
             padding: 60px 20px;
@@ -438,7 +422,6 @@
             }
         }
 
-        /* Toast */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -463,7 +446,6 @@
             transform: translateX(-50%) translateY(0);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -530,7 +512,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <h1>
                 <i class="fas fa-icons"></i>
@@ -547,8 +528,7 @@
             </div>
         </div>
 
-        <!-- Stats -->
-        <div class="stats" id="stats">
+        <div class="stats">
             <div class="stat-card">
                 <div class="stat-icon purple"><i class="fas fa-icons"></i></div>
                 <div class="stat-info">
@@ -579,7 +559,6 @@
             </div>
         </div>
 
-        <!-- Controls -->
         <div class="controls">
             <div class="search-box">
                 <i class="fas fa-search"></i>
@@ -594,7 +573,6 @@
             </div>
         </div>
 
-        <!-- Selected Actions -->
         <div class="selected-actions" id="selectedActions">
             <div class="info">
                 <strong id="selectedInfo">0</strong> ikon dipilih
@@ -610,7 +588,6 @@
             </button>
         </div>
 
-        <!-- Icon Grid -->
         <div id="iconGrid" class="icon-grid">
             <div class="loading">
                 <div class="spinner"></div>
@@ -618,7 +595,6 @@
             </div>
         </div>
 
-        <!-- Footer Actions -->
         <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; padding:20px 0;">
             <button class="btn btn-primary" onclick="downloadAllPNG()">
                 <i class="fas fa-file-image"></i> Download Semua PNG
@@ -632,102 +608,300 @@
         </div>
     </div>
 
-    <!-- Toast -->
     <div class="toast" id="toast"></div>
 
     <script>
         // ================================================================
-        // DATA IKON
+        // DATA IKON - Daftar ikon yang digunakan di dashboard Fisikaku
         // ================================================================
         const iconData = [
-            // Solid (fas)
-            'fa-user', 'fa-graduation-cap', 'fa-calendar-alt', 'fa-clock',
-            'fa-message', 'fa-chart-pie', 'fa-arrow-up', 'fa-arrow-down',
-            'fa-circle-check', 'fa-grid-2', 'fa-atom', 'fa-arrow-right-arrow-left',
-            'fa-bolt', 'fa-rocket', 'fa-magnet', 'fa-square-root-variable',
-            'fa-vr-cardboard', 'fa-cubes', 'fa-circle-play', 'fa-eye',
-            'fa-pencil', 'fa-book-open', 'fa-house', 'fa-user',
-            'fa-xmark', 'fa-bell', 'fa-check-circle', 'fa-play-circle',
-            'fa-file-alt', 'fa-star', 'fa-floppy-disk', 'fa-play',
-            'fa-stop', 'fa-download', 'fa-copy', 'fa-list', 'fa-file-code',
-            'fa-cloud-upload-alt', 'fa-save', 'fa-pen',
-            // Tambahan solid
-            'fa-home', 'fa-search', 'fa-heart', 'fa-star', 'fa-user-circle',
-            'fa-cog', 'fa-wrench', 'fa-tools', 'fa-camera', 'fa-video',
-            'fa-music', 'fa-headphones', 'fa-microphone', 'fa-volume-up',
-            'fa-phone', 'fa-envelope', 'fa-map-marker-alt', 'fa-globe',
-            'fa-lock', 'fa-unlock', 'fa-key', 'fa-shield-alt',
-            'fa-trash', 'fa-edit', 'fa-plus', 'fa-minus', 'fa-times',
-            'fa-check', 'fa-question-circle', 'fa-exclamation-circle',
-            'fa-info-circle', 'fa-warning', 'fa-fire', 'fa-bolt',
-            'fa-cloud', 'fa-rain', 'fa-snowflake', 'fa-sun', 'fa-moon',
-            'fa-tree', 'fa-leaf', 'fa-flower', 'fa-mountain',
-            'fa-car', 'fa-bus', 'fa-train', 'fa-ship', 'fa-plane',
-            'fa-bicycle', 'fa-walking', 'fa-running', 'fa-swimmer',
-            'fa-coffee', 'fa-utensils', 'fa-pizza-slice', 'fa-ice-cream',
-            'fa-mug-saucer', 'fa-mug-hot', 'fa-wine-glass', 'fa-beer',
-            'fa-tv', 'fa-laptop', 'fa-tablet', 'fa-mobile', 'fa-desktop',
-            'fa-print', 'fa-fax', 'fa-copy', 'fa-clipboard',
-            'fa-paste', 'fa-eraser', 'fa-paintbrush', 'fa-palette',
-            'fa-fill-drip', 'fa-brush', 'fa-pen-fancy', 'fa-pen-nib',
+            // Solid (fas) - Ikon utama dashboard
+            { name: 'fa-user', prefix: 'fas' },
+            { name: 'fa-graduation-cap', prefix: 'fas' },
+            { name: 'fa-calendar-alt', prefix: 'fas' },
+            { name: 'fa-clock', prefix: 'fas' },
+            { name: 'fa-message', prefix: 'fas' },
+            { name: 'fa-chart-pie', prefix: 'fas' },
+            { name: 'fa-arrow-up', prefix: 'fas' },
+            { name: 'fa-arrow-down', prefix: 'fas' },
+            { name: 'fa-circle-check', prefix: 'fas' },
+            { name: 'fa-grid-2', prefix: 'fas' },
+            { name: 'fa-atom', prefix: 'fas' },
+            { name: 'fa-arrow-right-arrow-left', prefix: 'fas' },
+            { name: 'fa-bolt', prefix: 'fas' },
+            { name: 'fa-rocket', prefix: 'fas' },
+            { name: 'fa-magnet', prefix: 'fas' },
+            { name: 'fa-square-root-variable', prefix: 'fas' },
+            { name: 'fa-vr-cardboard', prefix: 'fas' },
+            { name: 'fa-cubes', prefix: 'fas' },
+            { name: 'fa-circle-play', prefix: 'fas' },
+            { name: 'fa-eye', prefix: 'fas' },
+            { name: 'fa-pencil', prefix: 'fas' },
+            { name: 'fa-book-open', prefix: 'fas' },
+            { name: 'fa-house', prefix: 'fas' },
+            { name: 'fa-xmark', prefix: 'fas' },
+            { name: 'fa-bell', prefix: 'fas' },
+            { name: 'fa-check-circle', prefix: 'fas' },
+            { name: 'fa-play-circle', prefix: 'fas' },
+            { name: 'fa-file-alt', prefix: 'fas' },
+            { name: 'fa-star', prefix: 'fas' },
+            { name: 'fa-floppy-disk', prefix: 'fas' },
+            { name: 'fa-play', prefix: 'fas' },
+            { name: 'fa-stop', prefix: 'fas' },
+            { name: 'fa-download', prefix: 'fas' },
+            { name: 'fa-copy', prefix: 'fas' },
+            { name: 'fa-list', prefix: 'fas' },
+            { name: 'fa-file-code', prefix: 'fas' },
+            { name: 'fa-cloud-upload-alt', prefix: 'fas' },
+            { name: 'fa-save', prefix: 'fas' },
+            { name: 'fa-pen', prefix: 'fas' },
+            { name: 'fa-home', prefix: 'fas' },
+            { name: 'fa-search', prefix: 'fas' },
+            { name: 'fa-heart', prefix: 'fas' },
+            { name: 'fa-user-circle', prefix: 'fas' },
+            { name: 'fa-cog', prefix: 'fas' },
+            { name: 'fa-wrench', prefix: 'fas' },
+            { name: 'fa-tools', prefix: 'fas' },
+            { name: 'fa-camera', prefix: 'fas' },
+            { name: 'fa-video', prefix: 'fas' },
+            { name: 'fa-music', prefix: 'fas' },
+            { name: 'fa-headphones', prefix: 'fas' },
+            { name: 'fa-microphone', prefix: 'fas' },
+            { name: 'fa-volume-up', prefix: 'fas' },
+            { name: 'fa-phone', prefix: 'fas' },
+            { name: 'fa-envelope', prefix: 'fas' },
+            { name: 'fa-map-marker-alt', prefix: 'fas' },
+            { name: 'fa-globe', prefix: 'fas' },
+            { name: 'fa-lock', prefix: 'fas' },
+            { name: 'fa-unlock', prefix: 'fas' },
+            { name: 'fa-key', prefix: 'fas' },
+            { name: 'fa-shield-alt', prefix: 'fas' },
+            { name: 'fa-trash', prefix: 'fas' },
+            { name: 'fa-edit', prefix: 'fas' },
+            { name: 'fa-plus', prefix: 'fas' },
+            { name: 'fa-minus', prefix: 'fas' },
+            { name: 'fa-times', prefix: 'fas' },
+            { name: 'fa-check', prefix: 'fas' },
+            { name: 'fa-question-circle', prefix: 'fas' },
+            { name: 'fa-exclamation-circle', prefix: 'fas' },
+            { name: 'fa-info-circle', prefix: 'fas' },
+            { name: 'fa-warning', prefix: 'fas' },
+            { name: 'fa-fire', prefix: 'fas' },
+            { name: 'fa-cloud', prefix: 'fas' },
+            { name: 'fa-rain', prefix: 'fas' },
+            { name: 'fa-snowflake', prefix: 'fas' },
+            { name: 'fa-sun', prefix: 'fas' },
+            { name: 'fa-moon', prefix: 'fas' },
+            { name: 'fa-tree', prefix: 'fas' },
+            { name: 'fa-leaf', prefix: 'fas' },
+            { name: 'fa-flower', prefix: 'fas' },
+            { name: 'fa-mountain', prefix: 'fas' },
+            { name: 'fa-car', prefix: 'fas' },
+            { name: 'fa-bus', prefix: 'fas' },
+            { name: 'fa-train', prefix: 'fas' },
+            { name: 'fa-ship', prefix: 'fas' },
+            { name: 'fa-plane', prefix: 'fas' },
+            { name: 'fa-bicycle', prefix: 'fas' },
+            { name: 'fa-walking', prefix: 'fas' },
+            { name: 'fa-running', prefix: 'fas' },
+            { name: 'fa-swimmer', prefix: 'fas' },
+            { name: 'fa-coffee', prefix: 'fas' },
+            { name: 'fa-utensils', prefix: 'fas' },
+            { name: 'fa-pizza-slice', prefix: 'fas' },
+            { name: 'fa-ice-cream', prefix: 'fas' },
+            { name: 'fa-mug-saucer', prefix: 'fas' },
+            { name: 'fa-mug-hot', prefix: 'fas' },
+            { name: 'fa-wine-glass', prefix: 'fas' },
+            { name: 'fa-beer', prefix: 'fas' },
+            { name: 'fa-tv', prefix: 'fas' },
+            { name: 'fa-laptop', prefix: 'fas' },
+            { name: 'fa-tablet', prefix: 'fas' },
+            { name: 'fa-mobile', prefix: 'fas' },
+            { name: 'fa-desktop', prefix: 'fas' },
+            { name: 'fa-print', prefix: 'fas' },
+            { name: 'fa-fax', prefix: 'fas' },
+            { name: 'fa-clipboard', prefix: 'fas' },
+            { name: 'fa-paste', prefix: 'fas' },
+            { name: 'fa-eraser', prefix: 'fas' },
+            { name: 'fa-paintbrush', prefix: 'fas' },
+            { name: 'fa-palette', prefix: 'fas' },
+            { name: 'fa-fill-drip', prefix: 'fas' },
+            { name: 'fa-brush', prefix: 'fas' },
+            { name: 'fa-pen-fancy', prefix: 'fas' },
+            { name: 'fa-pen-nib', prefix: 'fas' },
+
             // Regular (far)
-            'fa-calendar', 'fa-clock', 'fa-star', 'fa-heart', 'fa-user',
-            'fa-envelope', 'fa-file', 'fa-folder', 'fa-folder-open',
-            'fa-address-book', 'fa-address-card', 'fa-bell', 'fa-bookmark',
-            'fa-building', 'fa-calendar-check', 'fa-calendar-plus',
-            'fa-caret-square-down', 'fa-caret-square-left', 'fa-caret-square-right',
-            'fa-caret-square-up', 'fa-circle', 'fa-clipboard',
-            'fa-clock', 'fa-comment', 'fa-comment-dots', 'fa-comments',
-            'fa-compass', 'fa-copy', 'fa-copyright', 'fa-credit-card',
-            'fa-dizzy', 'fa-dot-circle', 'fa-edit', 'fa-eye-slash',
-            'fa-file-archive', 'fa-file-audio', 'fa-file-code',
-            'fa-file-excel', 'fa-file-image', 'fa-file-pdf',
-            'fa-file-powerpoint', 'fa-file-video', 'fa-file-word',
-            'fa-flag', 'fa-flushed', 'fa-frown', 'fa-futbol',
-            'fa-gem', 'fa-grimace', 'fa-grin', 'fa-grin-hearts',
-            'fa-grin-squint', 'fa-grin-stars', 'fa-grin-tears',
-            'fa-grin-tongue', 'fa-grin-wink', 'fa-hand-lizard',
-            'fa-hand-paper', 'fa-hand-peace', 'fa-hand-point-down',
-            'fa-hand-point-left', 'fa-hand-point-right', 'fa-hand-point-up',
-            'fa-hand-pointer', 'fa-hand-scissors', 'fa-hand-spock',
-            'fa-handshake', 'fa-hdd', 'fa-hospital', 'fa-hourglass',
-            'fa-id-card', 'fa-images', 'fa-keyboard', 'fa-kiss',
-            'fa-kiss-beam', 'fa-kiss-wink-heart', 'fa-laugh',
-            'fa-laugh-beam', 'fa-laugh-squint', 'fa-laugh-wink',
-            'fa-lemon', 'fa-life-ring', 'fa-lightbulb', 'fa-map',
-            'fa-meh', 'fa-meh-blank', 'fa-meh-rolling-eyes',
-            'fa-minus-square', 'fa-moon', 'fa-newspaper',
-            'fa-object-group', 'fa-object-ungroup', 'fa-paper-plane',
-            'fa-pause-circle', 'fa-play-circle', 'fa-plus-square',
-            'fa-question-circle', 'fa-registered', 'fa-sad-cry',
-            'fa-sad-tear', 'fa-save', 'fa-share-square',
-            'fa-smile', 'fa-smile-beam', 'fa-smile-wink', 'fa-snowflake',
-            'fa-square', 'fa-star', 'fa-star-half', 'fa-sticky-note',
-            'fa-stop-circle', 'fa-sun', 'fa-surprise', 'fa-thumbs-down',
-            'fa-thumbs-up', 'fa-times-circle', 'fa-tired',
-            'fa-trash-alt', 'fa-user', 'fa-user-circle',
-            'fa-window-close', 'fa-window-maximize', 'fa-window-minimize',
-            'fa-window-restore',
+            { name: 'fa-calendar', prefix: 'far' },
+            { name: 'fa-star', prefix: 'far' },
+            { name: 'fa-heart', prefix: 'far' },
+            { name: 'fa-user', prefix: 'far' },
+            { name: 'fa-envelope', prefix: 'far' },
+            { name: 'fa-file', prefix: 'far' },
+            { name: 'fa-folder', prefix: 'far' },
+            { name: 'fa-folder-open', prefix: 'far' },
+            { name: 'fa-address-book', prefix: 'far' },
+            { name: 'fa-address-card', prefix: 'far' },
+            { name: 'fa-bell', prefix: 'far' },
+            { name: 'fa-bookmark', prefix: 'far' },
+            { name: 'fa-building', prefix: 'far' },
+            { name: 'fa-calendar-check', prefix: 'far' },
+            { name: 'fa-calendar-plus', prefix: 'far' },
+            { name: 'fa-caret-square-down', prefix: 'far' },
+            { name: 'fa-caret-square-left', prefix: 'far' },
+            { name: 'fa-caret-square-right', prefix: 'far' },
+            { name: 'fa-caret-square-up', prefix: 'far' },
+            { name: 'fa-circle', prefix: 'far' },
+            { name: 'fa-clipboard', prefix: 'far' },
+            { name: 'fa-comment', prefix: 'far' },
+            { name: 'fa-comment-dots', prefix: 'far' },
+            { name: 'fa-comments', prefix: 'far' },
+            { name: 'fa-compass', prefix: 'far' },
+            { name: 'fa-copy', prefix: 'far' },
+            { name: 'fa-copyright', prefix: 'far' },
+            { name: 'fa-credit-card', prefix: 'far' },
+            { name: 'fa-dizzy', prefix: 'far' },
+            { name: 'fa-dot-circle', prefix: 'far' },
+            { name: 'fa-edit', prefix: 'far' },
+            { name: 'fa-eye-slash', prefix: 'far' },
+            { name: 'fa-file-archive', prefix: 'far' },
+            { name: 'fa-file-audio', prefix: 'far' },
+            { name: 'fa-file-code', prefix: 'far' },
+            { name: 'fa-file-excel', prefix: 'far' },
+            { name: 'fa-file-image', prefix: 'far' },
+            { name: 'fa-file-pdf', prefix: 'far' },
+            { name: 'fa-file-powerpoint', prefix: 'far' },
+            { name: 'fa-file-video', prefix: 'far' },
+            { name: 'fa-file-word', prefix: 'far' },
+            { name: 'fa-flag', prefix: 'far' },
+            { name: 'fa-flushed', prefix: 'far' },
+            { name: 'fa-frown', prefix: 'far' },
+            { name: 'fa-futbol', prefix: 'far' },
+            { name: 'fa-gem', prefix: 'far' },
+            { name: 'fa-grimace', prefix: 'far' },
+            { name: 'fa-grin', prefix: 'far' },
+            { name: 'fa-grin-hearts', prefix: 'far' },
+            { name: 'fa-grin-squint', prefix: 'far' },
+            { name: 'fa-grin-stars', prefix: 'far' },
+            { name: 'fa-grin-tears', prefix: 'far' },
+            { name: 'fa-grin-tongue', prefix: 'far' },
+            { name: 'fa-grin-wink', prefix: 'far' },
+            { name: 'fa-hand-lizard', prefix: 'far' },
+            { name: 'fa-hand-paper', prefix: 'far' },
+            { name: 'fa-hand-peace', prefix: 'far' },
+            { name: 'fa-hand-point-down', prefix: 'far' },
+            { name: 'fa-hand-point-left', prefix: 'far' },
+            { name: 'fa-hand-point-right', prefix: 'far' },
+            { name: 'fa-hand-point-up', prefix: 'far' },
+            { name: 'fa-hand-pointer', prefix: 'far' },
+            { name: 'fa-hand-scissors', prefix: 'far' },
+            { name: 'fa-hand-spock', prefix: 'far' },
+            { name: 'fa-handshake', prefix: 'far' },
+            { name: 'fa-hdd', prefix: 'far' },
+            { name: 'fa-hospital', prefix: 'far' },
+            { name: 'fa-hourglass', prefix: 'far' },
+            { name: 'fa-id-card', prefix: 'far' },
+            { name: 'fa-images', prefix: 'far' },
+            { name: 'fa-keyboard', prefix: 'far' },
+            { name: 'fa-kiss', prefix: 'far' },
+            { name: 'fa-kiss-beam', prefix: 'far' },
+            { name: 'fa-kiss-wink-heart', prefix: 'far' },
+            { name: 'fa-laugh', prefix: 'far' },
+            { name: 'fa-laugh-beam', prefix: 'far' },
+            { name: 'fa-laugh-squint', prefix: 'far' },
+            { name: 'fa-laugh-wink', prefix: 'far' },
+            { name: 'fa-lemon', prefix: 'far' },
+            { name: 'fa-life-ring', prefix: 'far' },
+            { name: 'fa-lightbulb', prefix: 'far' },
+            { name: 'fa-map', prefix: 'far' },
+            { name: 'fa-meh', prefix: 'far' },
+            { name: 'fa-meh-blank', prefix: 'far' },
+            { name: 'fa-meh-rolling-eyes', prefix: 'far' },
+            { name: 'fa-minus-square', prefix: 'far' },
+            { name: 'fa-moon', prefix: 'far' },
+            { name: 'fa-newspaper', prefix: 'far' },
+            { name: 'fa-object-group', prefix: 'far' },
+            { name: 'fa-object-ungroup', prefix: 'far' },
+            { name: 'fa-paper-plane', prefix: 'far' },
+            { name: 'fa-pause-circle', prefix: 'far' },
+            { name: 'fa-play-circle', prefix: 'far' },
+            { name: 'fa-plus-square', prefix: 'far' },
+            { name: 'fa-question-circle', prefix: 'far' },
+            { name: 'fa-registered', prefix: 'far' },
+            { name: 'fa-sad-cry', prefix: 'far' },
+            { name: 'fa-sad-tear', prefix: 'far' },
+            { name: 'fa-save', prefix: 'far' },
+            { name: 'fa-share-square', prefix: 'far' },
+            { name: 'fa-smile', prefix: 'far' },
+            { name: 'fa-smile-beam', prefix: 'far' },
+            { name: 'fa-smile-wink', prefix: 'far' },
+            { name: 'fa-square', prefix: 'far' },
+            { name: 'fa-star-half', prefix: 'far' },
+            { name: 'fa-sticky-note', prefix: 'far' },
+            { name: 'fa-stop-circle', prefix: 'far' },
+            { name: 'fa-surprise', prefix: 'far' },
+            { name: 'fa-thumbs-down', prefix: 'far' },
+            { name: 'fa-thumbs-up', prefix: 'far' },
+            { name: 'fa-times-circle', prefix: 'far' },
+            { name: 'fa-tired', prefix: 'far' },
+            { name: 'fa-trash-alt', prefix: 'far' },
+            { name: 'fa-window-close', prefix: 'far' },
+            { name: 'fa-window-maximize', prefix: 'far' },
+            { name: 'fa-window-minimize', prefix: 'far' },
+            { name: 'fa-window-restore', prefix: 'far' },
+
             // Brands (fab)
-            'fa-github', 'fa-twitter', 'fa-facebook', 'fa-instagram',
-            'fa-youtube', 'fa-linkedin', 'fa-whatsapp', 'fa-telegram',
-            'fa-discord', 'fa-slack', 'fa-docker', 'fa-aws',
-            'fa-google', 'fa-apple', 'fa-windows', 'fa-linux',
-            'fa-android', 'fa-react', 'fa-vuejs', 'fa-angular',
-            'fa-bootstrap', 'fa-tailwindcss', 'fa-sass', 'fa-less',
-            'fa-node', 'fa-python', 'fa-java', 'fa-php',
-            'fa-ruby', 'fa-swift', 'fa-kotlin', 'fa-go',
-            'fa-rust', 'fa-trello', 'fa-jira', 'fa-git',
-            'fa-git-alt', 'fa-github-alt', 'fa-gitlab', 'fa-bitbucket',
-            'fa-stack-overflow', 'fa-stack-exchange', 'fa-hacker-news',
-            'fa-codepen', 'fa-css3', 'fa-html5', 'fa-js',
-            'fa-php', 'fa-python', 'fa-docker'
+            { name: 'fa-github', prefix: 'fab' },
+            { name: 'fa-twitter', prefix: 'fab' },
+            { name: 'fa-facebook', prefix: 'fab' },
+            { name: 'fa-instagram', prefix: 'fab' },
+            { name: 'fa-youtube', prefix: 'fab' },
+            { name: 'fa-linkedin', prefix: 'fab' },
+            { name: 'fa-whatsapp', prefix: 'fab' },
+            { name: 'fa-telegram', prefix: 'fab' },
+            { name: 'fa-discord', prefix: 'fab' },
+            { name: 'fa-slack', prefix: 'fab' },
+            { name: 'fa-docker', prefix: 'fab' },
+            { name: 'fa-aws', prefix: 'fab' },
+            { name: 'fa-google', prefix: 'fab' },
+            { name: 'fa-apple', prefix: 'fab' },
+            { name: 'fa-windows', prefix: 'fab' },
+            { name: 'fa-linux', prefix: 'fab' },
+            { name: 'fa-android', prefix: 'fab' },
+            { name: 'fa-react', prefix: 'fab' },
+            { name: 'fa-vuejs', prefix: 'fab' },
+            { name: 'fa-angular', prefix: 'fab' },
+            { name: 'fa-bootstrap', prefix: 'fab' },
+            { name: 'fa-tailwindcss', prefix: 'fab' },
+            { name: 'fa-sass', prefix: 'fab' },
+            { name: 'fa-less', prefix: 'fab' },
+            { name: 'fa-node', prefix: 'fab' },
+            { name: 'fa-python', prefix: 'fab' },
+            { name: 'fa-java', prefix: 'fab' },
+            { name: 'fa-php', prefix: 'fab' },
+            { name: 'fa-ruby', prefix: 'fab' },
+            { name: 'fa-swift', prefix: 'fab' },
+            { name: 'fa-kotlin', prefix: 'fab' },
+            { name: 'fa-go', prefix: 'fab' },
+            { name: 'fa-rust', prefix: 'fab' },
+            { name: 'fa-trello', prefix: 'fab' },
+            { name: 'fa-jira', prefix: 'fab' },
+            { name: 'fa-git', prefix: 'fab' },
+            { name: 'fa-git-alt', prefix: 'fab' },
+            { name: 'fa-github-alt', prefix: 'fab' },
+            { name: 'fa-gitlab', prefix: 'fab' },
+            { name: 'fa-bitbucket', prefix: 'fab' },
+            { name: 'fa-stack-overflow', prefix: 'fab' },
+            { name: 'fa-stack-exchange', prefix: 'fab' },
+            { name: 'fa-hacker-news', prefix: 'fab' },
+            { name: 'fa-codepen', prefix: 'fab' },
+            { name: 'fa-css3', prefix: 'fab' },
+            { name: 'fa-html5', prefix: 'fab' },
+            { name: 'fa-js', prefix: 'fab' }
         ];
 
         // ================================================================
         // STATE
         // ================================================================
-        let allIcons = [];
         let selectedIcons = new Set();
         let currentFilter = 'all';
         let downloadCount = 0;
@@ -737,94 +911,16 @@
         // FUNGSI UTAMA
         // ================================================================
 
-        function initIcons() {
-            const grid = document.getElementById('iconGrid');
-            grid.innerHTML = '';
-
-            // Map icon data dengan prefix
-            allIcons = iconData.map(name => {
-                let prefix = 'fas';
-                if (name.startsWith('fa-') && !name.startsWith('fa-')) {
-                    // sudah ada prefix
-                    const parts = name.split(' ');
-                    if (parts.length > 1) {
-                        prefix = parts[0];
-                        name = parts[1];
-                    }
-                }
-                // Tentukan prefix berdasarkan data
-                if (iconData.includes(name)) {
-                    if (name === 'fa-user' || name === 'fa-star' || name === 'fa-heart' || name === 'fa-clock' ||
-                        name === 'fa-calendar' || name === 'fa-envelope' || name === 'fa-file' || name === 'fa-folder' ||
-                        name === 'fa-folder-open' || name === 'fa-address-book' || name === 'fa-address-card' ||
-                        name === 'fa-bell' || name === 'fa-bookmark' || name === 'fa-building' ||
-                        name === 'fa-calendar-check' || name === 'fa-calendar-plus' || name === 'fa-caret-square-down' ||
-                        name === 'fa-caret-square-left' || name === 'fa-caret-square-right' || name === 'fa-caret-square-up' ||
-                        name === 'fa-circle' || name === 'fa-clipboard' || name === 'fa-clock' || name === 'fa-comment' ||
-                        name === 'fa-comment-dots' || name === 'fa-comments' || name === 'fa-compass' || name === 'fa-copy' ||
-                        name === 'fa-copyright' || name === 'fa-credit-card' || name === 'fa-dizzy' || name === 'fa-dot-circle' ||
-                        name === 'fa-edit' || name === 'fa-eye-slash' || name === 'fa-file-archive' || name === 'fa-file-audio' ||
-                        name === 'fa-file-code' || name === 'fa-file-excel' || name === 'fa-file-image' || name === 'fa-file-pdf' ||
-                        name === 'fa-file-powerpoint' || name === 'fa-file-video' || name === 'fa-file-word' || name === 'fa-flag' ||
-                        name === 'fa-flushed' || name === 'fa-frown' || name === 'fa-futbol' || name === 'fa-gem' ||
-                        name === 'fa-grimace' || name === 'fa-grin' || name === 'fa-grin-hearts' || name === 'fa-grin-squint' ||
-                        name === 'fa-grin-stars' || name === 'fa-grin-tears' || name === 'fa-grin-tongue' ||
-                        name === 'fa-grin-wink' || name === 'fa-hand-lizard' || name === 'fa-hand-paper' ||
-                        name === 'fa-hand-peace' || name === 'fa-hand-point-down' || name === 'fa-hand-point-left' ||
-                        name === 'fa-hand-point-right' || name === 'fa-hand-point-up' || name === 'fa-hand-pointer' ||
-                        name === 'fa-hand-scissors' || name === 'fa-hand-spock' || name === 'fa-handshake' ||
-                        name === 'fa-hdd' || name === 'fa-hospital' || name === 'fa-hourglass' || name === 'fa-id-card' ||
-                        name === 'fa-images' || name === 'fa-keyboard' || name === 'fa-kiss' || name === 'fa-kiss-beam' ||
-                        name === 'fa-kiss-wink-heart' || name === 'fa-laugh' || name === 'fa-laugh-beam' ||
-                        name === 'fa-laugh-squint' || name === 'fa-laugh-wink' || name === 'fa-lemon' || name === 'fa-life-ring' ||
-                        name === 'fa-lightbulb' || name === 'fa-map' || name === 'fa-meh' || name === 'fa-meh-blank' ||
-                        name === 'fa-meh-rolling-eyes' || name === 'fa-minus-square' || name === 'fa-moon' ||
-                        name === 'fa-newspaper' || name === 'fa-object-group' || name === 'fa-object-ungroup' ||
-                        name === 'fa-paper-plane' || name === 'fa-pause-circle' || name === 'fa-play-circle' ||
-                        name === 'fa-plus-square' || name === 'fa-question-circle' || name === 'fa-registered' ||
-                        name === 'fa-sad-cry' || name === 'fa-sad-tear' || name === 'fa-save' || name === 'fa-share-square' ||
-                        name === 'fa-smile' || name === 'fa-smile-beam' || name === 'fa-smile-wink' || name === 'fa-snowflake' ||
-                        name === 'fa-square' || name === 'fa-star' || name === 'fa-star-half' || name === 'fa-sticky-note' ||
-                        name === 'fa-stop-circle' || name === 'fa-sun' || name === 'fa-surprise' || name === 'fa-thumbs-down' ||
-                        name === 'fa-thumbs-up' || name === 'fa-times-circle' || name === 'fa-tired' || name === 'fa-trash-alt' ||
-                        name === 'fa-user' || name === 'fa-user-circle' || name === 'fa-window-close' ||
-                        name === 'fa-window-maximize' || name === 'fa-window-minimize' || name === 'fa-window-restore') {
-                        prefix = 'far';
-                    } else if (name === 'fa-github' || name === 'fa-twitter' || name === 'fa-facebook' ||
-                        name === 'fa-instagram' || name === 'fa-youtube' || name === 'fa-linkedin' ||
-                        name === 'fa-whatsapp' || name === 'fa-telegram' || name === 'fa-discord' ||
-                        name === 'fa-slack' || name === 'fa-docker' || name === 'fa-aws' || name === 'fa-google' ||
-                        name === 'fa-apple' || name === 'fa-windows' || name === 'fa-linux' || name === 'fa-android' ||
-                        name === 'fa-react' || name === 'fa-vuejs' || name === 'fa-angular' || name === 'fa-bootstrap' ||
-                        name === 'fa-tailwindcss' || name === 'fa-sass' || name === 'fa-less' || name === 'fa-node' ||
-                        name === 'fa-python' || name === 'fa-java' || name === 'fa-php' || name === 'fa-ruby' ||
-                        name === 'fa-swift' || name === 'fa-kotlin' || name === 'fa-go' || name === 'fa-rust' ||
-                        name === 'fa-trello' || name === 'fa-jira' || name === 'fa-git' || name === 'fa-git-alt' ||
-                        name === 'fa-github-alt' || name === 'fa-gitlab' || name === 'fa-bitbucket' ||
-                        name === 'fa-stack-overflow' || name === 'fa-stack-exchange' || name === 'fa-hacker-news' ||
-                        name === 'fa-codepen' || name === 'fa-css3' || name === 'fa-html5' || name === 'fa-js') {
-                        prefix = 'fab';
-                    } else {
-                        prefix = 'fas';
-                    }
-                }
-                return { name, prefix, display: name.replace('fa-', '') };
-            });
-
-            renderIcons();
-            updateStats();
-        }
-
         function renderIcons() {
             const grid = document.getElementById('iconGrid');
             const search = document.getElementById('searchInput').value.toLowerCase();
-            let filtered = allIcons;
+            let filtered = iconData;
 
             // Filter by search
             if (search) {
                 filtered = filtered.filter(icon =>
                     icon.name.toLowerCase().includes(search) ||
-                    icon.display.toLowerCase().includes(search)
+                    icon.name.replace('fa-', '').toLowerCase().includes(search)
                 );
             }
 
@@ -857,7 +953,7 @@
                      data-prefix="${icon.prefix}">
                     <div class="check-mark"><i class="fas fa-check"></i></div>
                     <i class="${icon.prefix} ${icon.name} icon-preview"></i>
-                    <div class="icon-name">${icon.display}</div>
+                    <div class="icon-name">${icon.name}</div>
                     <div class="download-options">
                         <button class="dl-btn png" onclick="event.stopPropagation(); downloadIcon('${icon.name}', 'png')">
                             <i class="fas fa-image"></i> PNG
@@ -868,10 +964,12 @@
                     </div>
                 </div>
             `).join('');
+
+            updateStats();
         }
 
         function updateStats() {
-            document.getElementById('totalIcons').textContent = allIcons.length;
+            document.getElementById('totalIcons').textContent = iconData.length;
             document.getElementById('selectedCount').textContent = selectedIcons.size;
 
             const actions = document.getElementById('selectedActions');
@@ -914,7 +1012,7 @@
         }
 
         function selectAll() {
-            allIcons.forEach(icon => selectedIcons.add(icon.name));
+            iconData.forEach(icon => selectedIcons.add(icon.name));
             renderIcons();
             updateStats();
             showToast(`✅ ${selectedIcons.size} ikon dipilih`);
@@ -928,43 +1026,84 @@
         }
 
         // ================================================================
-        // FUNGSI DOWNLOAD IKON (PNG / SVG)
+        // FUNGSI DOWNLOAD IKON (PNG / SVG) - VERSI PERBAIKAN
         // ================================================================
 
         function downloadIcon(name, format) {
-            const icon = allIcons.find(i => i.name === name);
-            if (!icon) return;
+            const icon = iconData.find(i => i.name === name);
+            if (!icon) {
+                showToast('❌ Ikon tidak ditemukan');
+                return;
+            }
 
             const prefix = icon.prefix;
-            const fullName = `${prefix} ${name}`;
-
-            // Buat elemen untuk render
-            const canvas = document.createElement('canvas');
+            const displayName = name.replace('fa-', '');
             const size = 128;
+
+            // Buat elemen div untuk rendering sementara
+            const container = document.createElement('div');
+            container.style.cssText = `
+                position: fixed;
+                left: -9999px;
+                top: -9999px;
+                width: ${size}px;
+                height: ${size}px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 72px;
+                color: #1a2538;
+                background: transparent;
+                font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands';
+            `;
+
+            // Tambahkan kelas yang sesuai
+            if (prefix === 'fab') {
+                container.style.fontFamily = '"Font Awesome 6 Brands"';
+                container.style.fontWeight = '400';
+            } else {
+                container.style.fontFamily = '"Font Awesome 6 Free"';
+                container.style.fontWeight = '900';
+            }
+
+            container.innerHTML = `<i class="${prefix} ${name}"></i>`;
+            document.body.appendChild(container);
+
+            // Gunakan html2canvas atau canvas manual
+            // Karena kita tidak bisa menggunakan html2canvas, kita gunakan canvas manual
+            // dengan pendekatan SVG
+
+            const canvas = document.createElement('canvas');
             canvas.width = size;
             canvas.height = size;
             const ctx = canvas.getContext('2d');
 
-            // Background transparan
+            // Clear dengan background transparan
             ctx.clearRect(0, 0, size, size);
 
-            // Render icon ke canvas menggunakan SVG
-            const svgString = `
+            // Gunakan pendekatan SVG dengan text
+            const unicode = getUnicode(name);
+
+            // Buat SVG yang valid dengan icon
+            const svgContent = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
-                    <style>
-                        .fa { font-family: 'Font Awesome 6 Free'; font-weight: 900; }
-                        .fab { font-family: 'Font Awesome 6 Brands'; font-weight: 400; }
-                        .far { font-family: 'Font Awesome 6 Free'; font-weight: 400; }
-                        .fas { font-family: 'Font Awesome 6 Free'; font-weight: 900; }
-                    </style>
-                    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" 
-                          font-size="72" fill="#1a2538" class="${prefix}">${name.replace('fa-', '')}</text>
+                    <defs>
+                        <style>
+                            .icon { 
+                                font-family: ${prefix === 'fab' ? "'Font Awesome 6 Brands'" : "'Font Awesome 6 Free'"};
+                                font-weight: ${prefix === 'fab' ? '400' : '900'};
+                                font-size: 72px;
+                                fill: #1a2538;
+                            }
+                        </style>
+                    </defs>
+                    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" class="icon">${displayName}</text>
                 </svg>
             `;
 
-            // Untuk SVG, download langsung
             if (format === 'svg') {
-                const svgBlob = new Blob([svgString], { type: 'image/svg+xml' });
+                // Download SVG
+                const svgBlob = new Blob([svgContent], { type: 'image/svg+xml' });
                 const url = URL.createObjectURL(svgBlob);
                 const a = document.createElement('a');
                 a.href = url;
@@ -972,16 +1111,16 @@
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+                setTimeout(() => URL.revokeObjectURL(url), 1000);
                 updateDownloadStats();
                 showToast(`✅ ${name}.svg berhasil diunduh`);
+                document.body.removeChild(container);
                 return;
             }
 
-            // Untuk PNG, render ke canvas
+            // Untuk PNG: render menggunakan Image
             const img = new Image();
-            const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
-            const url = URL.createObjectURL(svgBlob);
+            const svgUrl = URL.createObjectURL(new Blob([svgContent], { type: 'image/svg+xml;charset=utf-8' }));
 
             img.onload = function() {
                 ctx.drawImage(img, 0, 0, size, size);
@@ -992,18 +1131,18 @@
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+                setTimeout(() => URL.revokeObjectURL(svgUrl), 1000);
                 updateDownloadStats();
                 showToast(`✅ ${name}.png berhasil diunduh`);
+                document.body.removeChild(container);
             };
 
             img.onerror = function() {
-                // Fallback: render teks sederhana
+                // Fallback: render teks biasa
                 ctx.fillStyle = '#1a2538';
-                ctx.font = '48px "Font Awesome 6 Free"';
+                ctx.font = '72px "Font Awesome 6 Free"';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                const displayName = name.replace('fa-', '');
                 ctx.fillText(displayName, size / 2, size / 2);
 
                 const pngUrl = canvas.toDataURL('image/png');
@@ -1015,9 +1154,152 @@
                 document.body.removeChild(a);
                 updateDownloadStats();
                 showToast(`✅ ${name}.png berhasil diunduh (fallback)`);
+                document.body.removeChild(container);
             };
 
-            img.src = url;
+            img.src = svgUrl;
+        }
+
+        // Fungsi untuk mendapatkan unicode dari nama icon (fallback)
+        function getUnicode(name) {
+            const unicodeMap = {
+                'fa-user': '\uf007',
+                'fa-star': '\uf005',
+                'fa-heart': '\uf004',
+                'fa-home': '\uf015',
+                'fa-search': '\uf002',
+                'fa-cog': '\uf013',
+                'fa-download': '\uf019',
+                'fa-save': '\uf0c7',
+                'fa-trash': '\uf1f8',
+                'fa-edit': '\uf044',
+                'fa-plus': '\uf067',
+                'fa-minus': '\uf068',
+                'fa-times': '\uf00d',
+                'fa-check': '\uf00c',
+                'fa-envelope': '\uf0e0',
+                'fa-clock': '\uf017',
+                'fa-calendar': '\uf133',
+                'fa-bell': '\uf0f3',
+                'fa-user-circle': '\uf2bd',
+                'fa-graduation-cap': '\uf19d',
+                'fa-chart-pie': '\uf200',
+                'fa-play': '\uf04b',
+                'fa-stop': '\uf04d',
+                'fa-pencil': '\uf303',
+                'fa-book-open': '\uf518',
+                'fa-atom': '\uf5d2',
+                'fa-bolt': '\uf0e7',
+                'fa-rocket': '\uf135',
+                'fa-magnet': '\uf076',
+                'fa-cubes': '\uf1b3',
+                'fa-eye': '\uf06e',
+                'fa-house': '\uf015',
+                'fa-message': '\uf27a',
+                'fa-list': '\uf03a',
+                'fa-file-code': '\uf1c9'
+            };
+            return unicodeMap[name] || displayName;
         }
 
         // ================================================================
+        // FUNGSI DOWNLOAD BATCH
+        // ================================================================
+
+        function downloadSelectedPNG() {
+            if (selectedIcons.size === 0) {
+                showToast('⚠️ Pilih ikon terlebih dahulu');
+                return;
+            }
+            const names = Array.from(selectedIcons);
+            names.forEach((name, index) => {
+                setTimeout(() => downloadIcon(name, 'png'), index * 300);
+            });
+            showToast(`📥 Mengunduh ${selectedIcons.size} ikon PNG...`);
+        }
+
+        function downloadSelectedSVG() {
+            if (selectedIcons.size === 0) {
+                showToast('⚠️ Pilih ikon terlebih dahulu');
+                return;
+            }
+            const names = Array.from(selectedIcons);
+            names.forEach((name, index) => {
+                setTimeout(() => downloadIcon(name, 'svg'), index * 300);
+            });
+            showToast(`📥 Mengunduh ${selectedIcons.size} ikon SVG...`);
+        }
+
+        function downloadSelectedZIP() {
+            if (selectedIcons.size === 0) {
+                showToast('⚠️ Pilih ikon terlebih dahulu');
+                return;
+            }
+            const names = Array.from(selectedIcons);
+            names.forEach((name, index) => {
+                setTimeout(() => downloadIcon(name, 'png'), index * 400);
+                setTimeout(() => downloadIcon(name, 'svg'), index * 400 + 200);
+            });
+            showToast(`📥 Mengunduh ${selectedIcons.size} ikon (PNG+SVG)...`);
+        }
+
+        function downloadAllPNG() {
+            selectAll();
+            setTimeout(() => downloadSelectedPNG(), 500);
+        }
+
+        function downloadAllSVG() {
+            selectAll();
+            setTimeout(() => downloadSelectedSVG(), 500);
+        }
+
+        function downloadAllZIP() {
+            selectAll();
+            setTimeout(() => downloadSelectedZIP(), 500);
+        }
+
+        // ================================================================
+        // FUNGSI UTILITY
+        // ================================================================
+
+        function updateDownloadStats() {
+            downloadCount++;
+            document.getElementById('downloadCount').textContent = downloadCount;
+            const now = new Date();
+            lastDownloadTime = now;
+            document.getElementById('lastDownload').textContent =
+                now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // ================================================================
+        // INISIALISASI
+        // ================================================================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            renderIcons();
+            updateStats();
+        });
+
+        // Keyboard shortcut
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'a') {
+                e.preventDefault();
+                selectAll();
+            }
+            if (e.key === 'Escape') {
+                clearSelection();
+            }
+        });
+    </script>
+</body>
+</html>
