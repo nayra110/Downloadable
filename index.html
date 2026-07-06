@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Download Font Awesome SVG - Fisikaku</title>
+    <title>Download Ikon Font Awesome - PNG & SVG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
     <style>
         * {
             margin: 0;
@@ -12,92 +15,56 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(145deg, #eef2f8, #dce3ed);
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #eef2f8;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
         }
 
         .container {
-            max-width: 1000px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(20px);
-            border-radius: 32px;
-            padding: 40px 35px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        h1 {
+        /* Header */
+        .header {
+            background: linear-gradient(145deg, #4b1dd6, #7f3eff);
+            border-radius: 32px;
+            padding: 32px 36px;
+            color: #fff;
+            margin-bottom: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .header h1 {
             font-size: 28px;
             font-weight: 700;
-            color: #1a2538;
-            margin-bottom: 8px;
             display: flex;
             align-items: center;
+            gap: 12px;
+        }
+
+        .header h1 small {
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        .header-actions {
+            display: flex;
             gap: 12px;
             flex-wrap: wrap;
         }
 
-        h1 .badge {
-            font-size: 12px;
-            background: #4b1dd6;
-            color: #fff;
-            padding: 2px 14px;
-            border-radius: 40px;
-            font-weight: 600;
-        }
-
-        .subtitle {
-            color: #6b7b93;
-            font-size: 15px;
-            margin-bottom: 28px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            padding-bottom: 16px;
-        }
-
-        .stats-bar {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            background: rgba(75, 29, 214, 0.04);
-            border-radius: 16px;
-            padding: 16px 20px;
-            margin-bottom: 24px;
-            border: 1px solid rgba(75, 29, 214, 0.06);
-        }
-
-        .stats-bar .stat {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            color: #3d4a5e;
-        }
-
-        .stats-bar .stat strong {
-            color: #4b1dd6;
-            font-size: 18px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
-        }
-
-        .btn-download {
+        .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 10px 24px;
-            background: #4b1dd6;
-            color: #fff;
             border: none;
             border-radius: 40px;
             font-size: 13px;
@@ -105,379 +72,575 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
+            font-family: 'Inter', sans-serif;
         }
 
-        .btn-download:hover {
-            background: #7f3eff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(75, 29, 214, 0.25);
-        }
-
-        .btn-download:active {
-            transform: scale(0.95);
-        }
-
-        .btn-download.green {
-            background: #2ecc71;
-        }
-        .btn-download.green:hover {
-            background: #27ae60;
-            box-shadow: 0 8px 24px rgba(46, 204, 113, 0.3);
-        }
-        .btn-download.orange {
-            background: #f39c12;
-        }
-        .btn-download.orange:hover {
-            background: #e67e22;
-            box-shadow: 0 8px 24px rgba(243, 156, 18, 0.3);
-        }
-        .btn-download.red {
-            background: #e74c3c;
-        }
-        .btn-download.red:hover {
-            background: #c0392b;
-            box-shadow: 0 8px 24px rgba(231, 76, 60, 0.3);
-        }
-        .btn-download.purple {
-            background: #9b59b6;
-        }
-        .btn-download.purple:hover {
-            background: #8e44ad;
-            box-shadow: 0 8px 24px rgba(155, 89, 182, 0.3);
-        }
-        .btn-download.teal {
-            background: #1abc9c;
-        }
-        .btn-download.teal:hover {
-            background: #16a085;
-            box-shadow: 0 8px 24px rgba(26, 188, 156, 0.3);
-        }
-        .btn-download.dark {
-            background: #2c3e50;
-        }
-        .btn-download.dark:hover {
-            background: #1a2a3a;
-            box-shadow: 0 8px 24px rgba(44, 62, 80, 0.3);
-        }
-
-        .progress-container {
-            background: rgba(0, 0, 0, 0.04);
-            border-radius: 12px;
-            height: 8px;
-            margin: 12px 0 20px 0;
-            overflow: hidden;
-            display: none;
-        }
-
-        .progress-container.active {
-            display: block;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #4b1dd6, #7f3eff);
-            border-radius: 12px;
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .icon-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 10px;
-            margin-top: 16px;
-            max-height: 600px;
-            overflow-y: auto;
-            padding: 4px 2px;
-        }
-
-        .icon-grid::-webkit-scrollbar {
-            width: 4px;
-        }
-        .icon-grid::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .icon-grid::-webkit-scrollbar-thumb {
-            background: #4b1dd6;
-            border-radius: 10px;
-        }
-
-        .icon-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 12px;
+        .btn-white {
             background: #fff;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .icon-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(75, 29, 214, 0.08);
-            border-color: rgba(75, 29, 214, 0.1);
-        }
-
-        .icon-item .preview {
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
             color: #4b1dd6;
-            flex-shrink: 0;
         }
 
-        .icon-item .preview svg {
-            width: 24px;
-            height: 24px;
-            fill: #4b1dd6;
+        .btn-white:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
-        .icon-item .info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .icon-item .info .name {
-            font-size: 11px;
-            font-weight: 500;
-            color: #1a2538;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .icon-item .info .size {
-            font-size: 9px;
-            color: #b0bccf;
-        }
-
-        .icon-item .btn-download-sm {
-            padding: 4px 10px;
-            font-size: 10px;
-            background: #4b1dd6;
+        .btn-outline-white {
+            background: transparent;
             color: #fff;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
-        .icon-item .btn-download-sm:hover {
-            background: #7f3eff;
+        .btn-outline-white:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
             transform: scale(1.05);
         }
 
-        .icon-item .btn-download-sm.downloaded {
+        .btn-primary {
+            background: #4b1dd6;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #7f3eff;
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(75, 29, 214, 0.3);
+        }
+
+        .btn-success {
             background: #2ecc71;
+            color: #fff;
         }
 
-        .filter-input {
+        .btn-success:hover {
+            background: #27ae60;
+            transform: scale(1.05);
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            color: #fff;
+        }
+
+        .btn-warning:hover {
+            background: #e67e22;
+            transform: scale(1.05);
+        }
+
+        /* Controls */
+        .controls {
+            background: #fff;
+            border-radius: 24px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .controls .search-box {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .controls .search-box input {
             width: 100%;
-            padding: 10px 16px;
-            border: 2px solid rgba(0, 0, 0, 0.06);
-            border-radius: 14px;
+            padding: 10px 16px 10px 40px;
+            border: 2px solid #e8ecf2;
+            border-radius: 40px;
             font-size: 14px;
-            font-family: inherit;
+            font-family: 'Inter', sans-serif;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.7);
-            margin-bottom: 8px;
+            background: #f8fcff;
         }
 
-        .filter-input:focus {
+        .controls .search-box input:focus {
             outline: none;
             border-color: #4b1dd6;
-            box-shadow: 0 0 0 3px rgba(75, 29, 214, 0.08);
+            box-shadow: 0 0 0 4px rgba(75, 29, 214, 0.08);
         }
 
-        .status-text {
-            font-size: 13px;
-            color: #6b7b93;
-            margin: 8px 0;
+        .controls .search-box i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #8d9bb0;
+        }
+
+        .controls .filter-group {
             display: flex;
-            align-items: center;
             gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .status-text .success {
-            color: #2ecc71;
-        }
-        .status-text .error {
-            color: #e74c3c;
-        }
-        .status-text .loading {
-            color: #f39c12;
-        }
-
-        .info-box {
-            background: rgba(75, 29, 214, 0.05);
-            border-radius: 16px;
-            padding: 16px 20px;
-            margin: 16px 0 8px 0;
-            border-left: 4px solid #4b1dd6;
-        }
-
-        .info-box p {
-            font-size: 13px;
-            color: #3d4a5e;
-            line-height: 1.6;
-        }
-
-        .info-box code {
-            background: rgba(0, 0, 0, 0.05);
-            padding: 2px 8px;
-            border-radius: 6px;
+        .controls .filter-group .filter-btn {
+            padding: 6px 16px;
+            border: 2px solid #e8ecf2;
+            border-radius: 40px;
+            background: transparent;
             font-size: 12px;
+            font-weight: 600;
+            color: #6b7b93;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .controls .filter-group .filter-btn:hover {
+            border-color: #4b1dd6;
             color: #4b1dd6;
         }
 
+        .controls .filter-group .filter-btn.active {
+            background: #4b1dd6;
+            color: #fff;
+            border-color: #4b1dd6;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 16px 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .stat-card .stat-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .stat-card .stat-icon.purple {
+            background: #4b1dd6;
+        }
+        .stat-card .stat-icon.green {
+            background: #2ecc71;
+        }
+        .stat-card .stat-icon.blue {
+            background: #3498db;
+        }
+        .stat-card .stat-icon.orange {
+            background: #f39c12;
+        }
+
+        .stat-card .stat-info .number {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a2538;
+            line-height: 1.2;
+        }
+
+        .stat-card .stat-info .label {
+            font-size: 12px;
+            color: #8d9bb0;
+            font-weight: 500;
+        }
+
+        /* Icon Grid */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .icon-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 16px 12px 14px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .icon-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(75, 29, 214, 0.08);
+            border-color: rgba(75, 29, 214, 0.1);
+        }
+
+        .icon-card.selected {
+            border-color: #4b1dd6;
+            background: rgba(75, 29, 214, 0.03);
+        }
+
+        .icon-card .icon-preview {
+            font-size: 32px;
+            color: #1a2538;
+            display: block;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-card:hover .icon-preview {
+            transform: scale(1.15);
+        }
+
+        .icon-card .icon-name {
+            font-size: 10px;
+            color: #8d9bb0;
+            font-weight: 500;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+        }
+
+        .icon-card .download-options {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-radius: 0 0 20px 20px;
+            padding: 8px 10px;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .icon-card:hover .download-options {
+            display: flex;
+        }
+
+        .icon-card .download-options .dl-btn {
+            padding: 4px 10px;
+            border: none;
+            border-radius: 12px;
+            font-size: 9px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .icon-card .download-options .dl-btn.png {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .icon-card .download-options .dl-btn.png:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .icon-card .download-options .dl-btn.svg {
+            background: #2ecc71;
+            color: #fff;
+        }
+
+        .icon-card .download-options .dl-btn.svg:hover {
+            background: #27ae60;
+            transform: scale(1.05);
+        }
+
+        .icon-card .check-mark {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4b1dd6;
+            color: #fff;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .icon-card.selected .check-mark {
+            opacity: 1;
+        }
+
+        /* Selected Actions */
+        .selected-actions {
+            background: #fff;
+            border-radius: 24px;
+            padding: 16px 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            display: none;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .selected-actions.show {
+            display: flex;
+        }
+
+        .selected-actions .info {
+            flex: 1;
+            font-size: 14px;
+            color: #3d4a5e;
+        }
+
+        .selected-actions .info strong {
+            color: #4b1dd6;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8d9bb0;
+        }
+
+        .loading .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e8ecf2;
+            border-top-color: #4b1dd6;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Toast */
         .toast {
             position: fixed;
             bottom: 30px;
             left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.8);
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(12px);
             color: #fff;
-            padding: 12px 28px;
+            padding: 14px 28px;
             border-radius: 16px;
             font-size: 14px;
             font-weight: 500;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             z-index: 999;
-            display: none;
-            animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             max-width: 90%;
             text-align: center;
         }
 
         .toast.show {
-            display: block;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateX(-50%) translateY(30px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0) scale(1);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px 16px;
-            }
-            h1 {
-                font-size: 22px;
-            }
-            .icon-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                max-height: 400px;
-            }
-            .stats-bar {
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
                 flex-direction: column;
+                text-align: center;
+                padding: 24px 20px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .controls .filter-group {
+                justify-content: center;
+            }
+
+            .icon-grid {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+                gap: 12px;
+            }
+
+            .icon-card .icon-preview {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .icon-grid {
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
                 gap: 8px;
             }
-            .btn-group .btn-download {
-                font-size: 12px;
-                padding: 8px 16px;
+
+            .icon-card {
+                padding: 12px 8px 10px;
+            }
+
+            .icon-card .icon-preview {
+                font-size: 22px;
+            }
+
+            .icon-card .icon-name {
+                font-size: 8px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-card {
+                padding: 12px 14px;
+            }
+
+            .stat-card .stat-info .number {
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>
-            ⚡ Download Icon SVG
-            <span class="badge">Font Awesome 6.7.2</span>
-        </h1>
-        <p class="subtitle">
-            Download icon Font Awesome dalam format SVG satu per satu. 
-            Cocok untuk penggunaan offline atau desain grafis.
-        </p>
-
-        <div class="stats-bar">
-            <div class="stat">
-                📦 Total Icon: <strong id="totalIcons">0</strong>
-            </div>
-            <div class="stat">
-                ✅ Terunduh: <strong id="downloadedCount">0</strong>
-            </div>
-            <div class="stat">
-                📁 Total Ukuran: <strong id="totalSize">0 KB</strong>
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <i class="fas fa-icons"></i>
+                Download Ikon
+                <small>Font Awesome 6.7.2</small>
+            </h1>
+            <div class="header-actions">
+                <button class="btn btn-outline-white" onclick="selectAll()">
+                    <i class="fas fa-check-double"></i> Pilih Semua
+                </button>
+                <button class="btn btn-outline-white" onclick="clearSelection()">
+                    <i class="fas fa-times"></i> Hapus Pilihan
+                </button>
             </div>
         </div>
 
-        <div class="btn-group">
-            <button class="btn-download green" onclick="downloadAllSVG()">
-                <i class="fas fa-download"></i> Download Semua SVG
-            </button>
-            <button class="btn-download orange" onclick="downloadSelectedSVG()">
-                <i class="fas fa-check-double"></i> Download Terseleksi
-            </button>
-            <button class="btn-download purple" onclick="selectAllIcons()">
-                <i class="fas fa-check-square"></i> Pilih Semua
-            </button>
-            <button class="btn-download dark" onclick="deselectAllIcons()">
-                <i class="fas fa-square"></i> Hapus Pilihan
-            </button>
-            <button class="btn-download teal" onclick="exportIconList()">
-                <i class="fas fa-file-export"></i> Export Daftar
-            </button>
-        </div>
-
-        <div class="progress-container" id="progressContainer">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-
-        <div class="status-text" id="statusText">
-            <span>💡 Klik icon untuk menyeleksi, atau klik tombol download</span>
-        </div>
-
-        <input type="text" class="filter-input" id="filterInput" placeholder="🔍 Cari icon... (contoh: user, home, star)" />
-
-        <div class="icon-grid" id="iconGrid">
-            <!-- Icon akan dirender di sini -->
-            <div style="grid-column:1/-1; text-align:center; padding:40px; color:#8d9bb0;">
-                ⏳ Memuat daftar icon...
+        <!-- Stats -->
+        <div class="stats" id="stats">
+            <div class="stat-card">
+                <div class="stat-icon purple"><i class="fas fa-icons"></i></div>
+                <div class="stat-info">
+                    <div class="number" id="totalIcons">0</div>
+                    <div class="label">Total Ikon</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                <div class="stat-info">
+                    <div class="number" id="selectedCount">0</div>
+                    <div class="label">Dipilih</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon blue"><i class="fas fa-download"></i></div>
+                <div class="stat-info">
+                    <div class="number" id="downloadCount">0</div>
+                    <div class="label">Total Download</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange"><i class="fas fa-clock"></i></div>
+                <div class="stat-info">
+                    <div class="number" id="lastDownload">-</div>
+                    <div class="label">Terakhir Download</div>
+                </div>
             </div>
         </div>
 
-        <div class="info-box">
-            <p>
-                <strong>💡 Cara Penggunaan:</strong>
-                <br>
-                1. Klik icon untuk menyeleksi (centang akan muncul)
-                <br>
-                2. Gunakan tombol <code>Download Terseleksi</code> untuk mengunduh icon yang dipilih
-                <br>
-                3. Gunakan <code>Download Semua SVG</code> untuk mengunduh semua icon sekaligus
-                <br>
-                4. Setiap icon akan diunduh sebagai file <code>.svg</code> individual
-                <br><br>
-                <span style="font-size:12px; color:#8d9bb0;">
-                    ⚠️ Ikon diambil dari CDN Font Awesome. Pastikan koneksi internet aktif.
-                    Total 40+ icon yang digunakan di dashboard Fisikaku.
-                </span>
-            </p>
+        <!-- Controls -->
+        <div class="controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Cari ikon..." oninput="filterIcons()" />
+            </div>
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">Semua</button>
+                <button class="filter-btn" data-filter="fas" onclick="setFilter('fas')">Solid</button>
+                <button class="filter-btn" data-filter="far" onclick="setFilter('far')">Regular</button>
+                <button class="filter-btn" data-filter="fab" onclick="setFilter('fab')">Brand</button>
+                <button class="filter-btn" data-filter="selected" onclick="setFilter('selected')">Terpilih</button>
+            </div>
+        </div>
+
+        <!-- Selected Actions -->
+        <div class="selected-actions" id="selectedActions">
+            <div class="info">
+                <strong id="selectedInfo">0</strong> ikon dipilih
+            </div>
+            <button class="btn btn-primary" onclick="downloadSelectedPNG()">
+                <i class="fas fa-file-image"></i> Download PNG
+            </button>
+            <button class="btn btn-success" onclick="downloadSelectedSVG()">
+                <i class="fas fa-code"></i> Download SVG
+            </button>
+            <button class="btn btn-warning" onclick="downloadSelectedZIP()">
+                <i class="fas fa-file-archive"></i> ZIP (PNG+SVG)
+            </button>
+        </div>
+
+        <!-- Icon Grid -->
+        <div id="iconGrid" class="icon-grid">
+            <div class="loading">
+                <div class="spinner"></div>
+                <p>Memuat ikon...</p>
+            </div>
+        </div>
+
+        <!-- Footer Actions -->
+        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; padding:20px 0;">
+            <button class="btn btn-primary" onclick="downloadAllPNG()">
+                <i class="fas fa-file-image"></i> Download Semua PNG
+            </button>
+            <button class="btn btn-success" onclick="downloadAllSVG()">
+                <i class="fas fa-code"></i> Download Semua SVG
+            </button>
+            <button class="btn btn-warning" onclick="downloadAllZIP()">
+                <i class="fas fa-file-archive"></i> Download Semua (ZIP)
+            </button>
         </div>
     </div>
 
-    <!-- Toast Notification -->
+    <!-- Toast -->
     <div class="toast" id="toast"></div>
 
     <script>
         // ================================================================
-        // DAFTAR ICON FONT AWESOME YANG DIGUNAKAN DI DASHBOARD
+        // DATA IKON
         // ================================================================
-        const ICON_LIST = [
+        const iconData = [
+            // Solid (fas)
             'fa-user', 'fa-graduation-cap', 'fa-calendar-alt', 'fa-clock',
             'fa-message', 'fa-chart-pie', 'fa-arrow-up', 'fa-arrow-down',
             'fa-circle-check', 'fa-grid-2', 'fa-atom', 'fa-arrow-right-arrow-left',
@@ -487,180 +650,257 @@
             'fa-xmark', 'fa-bell', 'fa-check-circle', 'fa-play-circle',
             'fa-file-alt', 'fa-star', 'fa-floppy-disk', 'fa-play',
             'fa-stop', 'fa-download', 'fa-copy', 'fa-list', 'fa-file-code',
-            'fa-cloud-upload-alt', 'fa-save', 'fa-pen'
+            'fa-cloud-upload-alt', 'fa-save', 'fa-pen',
+            // Tambahan solid
+            'fa-home', 'fa-search', 'fa-heart', 'fa-star', 'fa-user-circle',
+            'fa-cog', 'fa-wrench', 'fa-tools', 'fa-camera', 'fa-video',
+            'fa-music', 'fa-headphones', 'fa-microphone', 'fa-volume-up',
+            'fa-phone', 'fa-envelope', 'fa-map-marker-alt', 'fa-globe',
+            'fa-lock', 'fa-unlock', 'fa-key', 'fa-shield-alt',
+            'fa-trash', 'fa-edit', 'fa-plus', 'fa-minus', 'fa-times',
+            'fa-check', 'fa-question-circle', 'fa-exclamation-circle',
+            'fa-info-circle', 'fa-warning', 'fa-fire', 'fa-bolt',
+            'fa-cloud', 'fa-rain', 'fa-snowflake', 'fa-sun', 'fa-moon',
+            'fa-tree', 'fa-leaf', 'fa-flower', 'fa-mountain',
+            'fa-car', 'fa-bus', 'fa-train', 'fa-ship', 'fa-plane',
+            'fa-bicycle', 'fa-walking', 'fa-running', 'fa-swimmer',
+            'fa-coffee', 'fa-utensils', 'fa-pizza-slice', 'fa-ice-cream',
+            'fa-mug-saucer', 'fa-mug-hot', 'fa-wine-glass', 'fa-beer',
+            'fa-tv', 'fa-laptop', 'fa-tablet', 'fa-mobile', 'fa-desktop',
+            'fa-print', 'fa-fax', 'fa-copy', 'fa-clipboard',
+            'fa-paste', 'fa-eraser', 'fa-paintbrush', 'fa-palette',
+            'fa-fill-drip', 'fa-brush', 'fa-pen-fancy', 'fa-pen-nib',
+            // Regular (far)
+            'fa-calendar', 'fa-clock', 'fa-star', 'fa-heart', 'fa-user',
+            'fa-envelope', 'fa-file', 'fa-folder', 'fa-folder-open',
+            'fa-address-book', 'fa-address-card', 'fa-bell', 'fa-bookmark',
+            'fa-building', 'fa-calendar-check', 'fa-calendar-plus',
+            'fa-caret-square-down', 'fa-caret-square-left', 'fa-caret-square-right',
+            'fa-caret-square-up', 'fa-circle', 'fa-clipboard',
+            'fa-clock', 'fa-comment', 'fa-comment-dots', 'fa-comments',
+            'fa-compass', 'fa-copy', 'fa-copyright', 'fa-credit-card',
+            'fa-dizzy', 'fa-dot-circle', 'fa-edit', 'fa-eye-slash',
+            'fa-file-archive', 'fa-file-audio', 'fa-file-code',
+            'fa-file-excel', 'fa-file-image', 'fa-file-pdf',
+            'fa-file-powerpoint', 'fa-file-video', 'fa-file-word',
+            'fa-flag', 'fa-flushed', 'fa-frown', 'fa-futbol',
+            'fa-gem', 'fa-grimace', 'fa-grin', 'fa-grin-hearts',
+            'fa-grin-squint', 'fa-grin-stars', 'fa-grin-tears',
+            'fa-grin-tongue', 'fa-grin-wink', 'fa-hand-lizard',
+            'fa-hand-paper', 'fa-hand-peace', 'fa-hand-point-down',
+            'fa-hand-point-left', 'fa-hand-point-right', 'fa-hand-point-up',
+            'fa-hand-pointer', 'fa-hand-scissors', 'fa-hand-spock',
+            'fa-handshake', 'fa-hdd', 'fa-hospital', 'fa-hourglass',
+            'fa-id-card', 'fa-images', 'fa-keyboard', 'fa-kiss',
+            'fa-kiss-beam', 'fa-kiss-wink-heart', 'fa-laugh',
+            'fa-laugh-beam', 'fa-laugh-squint', 'fa-laugh-wink',
+            'fa-lemon', 'fa-life-ring', 'fa-lightbulb', 'fa-map',
+            'fa-meh', 'fa-meh-blank', 'fa-meh-rolling-eyes',
+            'fa-minus-square', 'fa-moon', 'fa-newspaper',
+            'fa-object-group', 'fa-object-ungroup', 'fa-paper-plane',
+            'fa-pause-circle', 'fa-play-circle', 'fa-plus-square',
+            'fa-question-circle', 'fa-registered', 'fa-sad-cry',
+            'fa-sad-tear', 'fa-save', 'fa-share-square',
+            'fa-smile', 'fa-smile-beam', 'fa-smile-wink', 'fa-snowflake',
+            'fa-square', 'fa-star', 'fa-star-half', 'fa-sticky-note',
+            'fa-stop-circle', 'fa-sun', 'fa-surprise', 'fa-thumbs-down',
+            'fa-thumbs-up', 'fa-times-circle', 'fa-tired',
+            'fa-trash-alt', 'fa-user', 'fa-user-circle',
+            'fa-window-close', 'fa-window-maximize', 'fa-window-minimize',
+            'fa-window-restore',
+            // Brands (fab)
+            'fa-github', 'fa-twitter', 'fa-facebook', 'fa-instagram',
+            'fa-youtube', 'fa-linkedin', 'fa-whatsapp', 'fa-telegram',
+            'fa-discord', 'fa-slack', 'fa-docker', 'fa-aws',
+            'fa-google', 'fa-apple', 'fa-windows', 'fa-linux',
+            'fa-android', 'fa-react', 'fa-vuejs', 'fa-angular',
+            'fa-bootstrap', 'fa-tailwindcss', 'fa-sass', 'fa-less',
+            'fa-node', 'fa-python', 'fa-java', 'fa-php',
+            'fa-ruby', 'fa-swift', 'fa-kotlin', 'fa-go',
+            'fa-rust', 'fa-trello', 'fa-jira', 'fa-git',
+            'fa-git-alt', 'fa-github-alt', 'fa-gitlab', 'fa-bitbucket',
+            'fa-stack-overflow', 'fa-stack-exchange', 'fa-hacker-news',
+            'fa-codepen', 'fa-css3', 'fa-html5', 'fa-js',
+            'fa-php', 'fa-python', 'fa-docker'
         ];
 
-        // Hapus duplikat
-        const uniqueIcons = [...new Set(ICON_LIST)];
-        let iconData = [];
+        // ================================================================
+        // STATE
+        // ================================================================
+        let allIcons = [];
         let selectedIcons = new Set();
-        let downloadedIcons = new Set();
+        let currentFilter = 'all';
+        let downloadCount = 0;
+        let lastDownloadTime = null;
 
         // ================================================================
         // FUNGSI UTAMA
         // ================================================================
 
-        function showToast(message, duration = 3000) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            clearTimeout(toast._timer);
-            toast._timer = setTimeout(() => toast.classList.remove('show'), duration);
-        }
+        function initIcons() {
+            const grid = document.getElementById('iconGrid');
+            grid.innerHTML = '';
 
-        function updateStats() {
-            document.getElementById('totalIcons').textContent = iconData.length;
-            document.getElementById('downloadedCount').textContent = downloadedIcons.size;
-
-            let totalSize = 0;
-            iconData.forEach(icon => {
-                if (icon.size) totalSize += icon.size;
-            });
-            if (totalSize > 0) {
-                document.getElementById('totalSize').textContent = (totalSize / 1024).toFixed(1) + ' KB';
-            } else {
-                document.getElementById('totalSize').textContent = 'Menghitung...';
-            }
-        }
-
-        function updateProgress(current, total) {
-            const container = document.getElementById('progressContainer');
-            const bar = document.getElementById('progressBar');
-            container.classList.add('active');
-            const pct = Math.round((current / total) * 100);
-            bar.style.width = pct + '%';
-            if (current >= total) {
-                setTimeout(() => {
-                    container.classList.remove('active');
-                    bar.style.width = '0%';
-                }, 1000);
-            }
-        }
-
-        // ================================================================
-        // AMBIL SVG DARI CDN FONT AWESOME
-        // ================================================================
-
-        async function fetchIconSVG(iconName) {
-            try {
-                // URL untuk mengambil SVG dari Font Awesome CDN
-                const url = `https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/svgs/solid/${iconName.replace('fa-', '')}.svg`;
-
-                const response = await fetch(url);
-                if (!response.ok) throw new Error('Gagal mengambil SVG');
-                const svgText = await response.text();
-
-                // Ekstrak ukuran dari SVG atau estimasi
-                const sizeMatch = svgText.match(/viewBox="[^"]*"/);
-                let size = 0;
-                if (sizeMatch) {
-                    const viewBox = sizeMatch[0];
-                    const nums = viewBox.match(/\d+/g);
-                    if (nums && nums.length >= 2) {
-                        size = parseInt(nums[2]) * parseInt(nums[3]);
+            // Map icon data dengan prefix
+            allIcons = iconData.map(name => {
+                let prefix = 'fas';
+                if (name.startsWith('fa-') && !name.startsWith('fa-')) {
+                    // sudah ada prefix
+                    const parts = name.split(' ');
+                    if (parts.length > 1) {
+                        prefix = parts[0];
+                        name = parts[1];
                     }
                 }
-
-                return {
-                    name: iconName,
-                    svg: svgText,
-                    size: size || 1500 // estimasi default
-                };
-            } catch (error) {
-                console.warn(`Gagal mengambil ${iconName}:`, error);
-                return null;
-            }
-        }
-
-        // ================================================================
-        // RENDER ICON GRID
-        // ================================================================
-
-        async function loadIcons() {
-            const grid = document.getElementById('iconGrid');
-            const statusText = document.getElementById('statusText');
-
-            statusText.innerHTML = '<span class="loading">⏳ Mengambil data icon dari CDN...</span>';
-
-            let loaded = 0;
-            const total = uniqueIcons.length;
-
-            for (const name of uniqueIcons) {
-                const data = await fetchIconSVG(name);
-                if (data) {
-                    iconData.push(data);
+                // Tentukan prefix berdasarkan data
+                if (iconData.includes(name)) {
+                    if (name === 'fa-user' || name === 'fa-star' || name === 'fa-heart' || name === 'fa-clock' ||
+                        name === 'fa-calendar' || name === 'fa-envelope' || name === 'fa-file' || name === 'fa-folder' ||
+                        name === 'fa-folder-open' || name === 'fa-address-book' || name === 'fa-address-card' ||
+                        name === 'fa-bell' || name === 'fa-bookmark' || name === 'fa-building' ||
+                        name === 'fa-calendar-check' || name === 'fa-calendar-plus' || name === 'fa-caret-square-down' ||
+                        name === 'fa-caret-square-left' || name === 'fa-caret-square-right' || name === 'fa-caret-square-up' ||
+                        name === 'fa-circle' || name === 'fa-clipboard' || name === 'fa-clock' || name === 'fa-comment' ||
+                        name === 'fa-comment-dots' || name === 'fa-comments' || name === 'fa-compass' || name === 'fa-copy' ||
+                        name === 'fa-copyright' || name === 'fa-credit-card' || name === 'fa-dizzy' || name === 'fa-dot-circle' ||
+                        name === 'fa-edit' || name === 'fa-eye-slash' || name === 'fa-file-archive' || name === 'fa-file-audio' ||
+                        name === 'fa-file-code' || name === 'fa-file-excel' || name === 'fa-file-image' || name === 'fa-file-pdf' ||
+                        name === 'fa-file-powerpoint' || name === 'fa-file-video' || name === 'fa-file-word' || name === 'fa-flag' ||
+                        name === 'fa-flushed' || name === 'fa-frown' || name === 'fa-futbol' || name === 'fa-gem' ||
+                        name === 'fa-grimace' || name === 'fa-grin' || name === 'fa-grin-hearts' || name === 'fa-grin-squint' ||
+                        name === 'fa-grin-stars' || name === 'fa-grin-tears' || name === 'fa-grin-tongue' ||
+                        name === 'fa-grin-wink' || name === 'fa-hand-lizard' || name === 'fa-hand-paper' ||
+                        name === 'fa-hand-peace' || name === 'fa-hand-point-down' || name === 'fa-hand-point-left' ||
+                        name === 'fa-hand-point-right' || name === 'fa-hand-point-up' || name === 'fa-hand-pointer' ||
+                        name === 'fa-hand-scissors' || name === 'fa-hand-spock' || name === 'fa-handshake' ||
+                        name === 'fa-hdd' || name === 'fa-hospital' || name === 'fa-hourglass' || name === 'fa-id-card' ||
+                        name === 'fa-images' || name === 'fa-keyboard' || name === 'fa-kiss' || name === 'fa-kiss-beam' ||
+                        name === 'fa-kiss-wink-heart' || name === 'fa-laugh' || name === 'fa-laugh-beam' ||
+                        name === 'fa-laugh-squint' || name === 'fa-laugh-wink' || name === 'fa-lemon' || name === 'fa-life-ring' ||
+                        name === 'fa-lightbulb' || name === 'fa-map' || name === 'fa-meh' || name === 'fa-meh-blank' ||
+                        name === 'fa-meh-rolling-eyes' || name === 'fa-minus-square' || name === 'fa-moon' ||
+                        name === 'fa-newspaper' || name === 'fa-object-group' || name === 'fa-object-ungroup' ||
+                        name === 'fa-paper-plane' || name === 'fa-pause-circle' || name === 'fa-play-circle' ||
+                        name === 'fa-plus-square' || name === 'fa-question-circle' || name === 'fa-registered' ||
+                        name === 'fa-sad-cry' || name === 'fa-sad-tear' || name === 'fa-save' || name === 'fa-share-square' ||
+                        name === 'fa-smile' || name === 'fa-smile-beam' || name === 'fa-smile-wink' || name === 'fa-snowflake' ||
+                        name === 'fa-square' || name === 'fa-star' || name === 'fa-star-half' || name === 'fa-sticky-note' ||
+                        name === 'fa-stop-circle' || name === 'fa-sun' || name === 'fa-surprise' || name === 'fa-thumbs-down' ||
+                        name === 'fa-thumbs-up' || name === 'fa-times-circle' || name === 'fa-tired' || name === 'fa-trash-alt' ||
+                        name === 'fa-user' || name === 'fa-user-circle' || name === 'fa-window-close' ||
+                        name === 'fa-window-maximize' || name === 'fa-window-minimize' || name === 'fa-window-restore') {
+                        prefix = 'far';
+                    } else if (name === 'fa-github' || name === 'fa-twitter' || name === 'fa-facebook' ||
+                        name === 'fa-instagram' || name === 'fa-youtube' || name === 'fa-linkedin' ||
+                        name === 'fa-whatsapp' || name === 'fa-telegram' || name === 'fa-discord' ||
+                        name === 'fa-slack' || name === 'fa-docker' || name === 'fa-aws' || name === 'fa-google' ||
+                        name === 'fa-apple' || name === 'fa-windows' || name === 'fa-linux' || name === 'fa-android' ||
+                        name === 'fa-react' || name === 'fa-vuejs' || name === 'fa-angular' || name === 'fa-bootstrap' ||
+                        name === 'fa-tailwindcss' || name === 'fa-sass' || name === 'fa-less' || name === 'fa-node' ||
+                        name === 'fa-python' || name === 'fa-java' || name === 'fa-php' || name === 'fa-ruby' ||
+                        name === 'fa-swift' || name === 'fa-kotlin' || name === 'fa-go' || name === 'fa-rust' ||
+                        name === 'fa-trello' || name === 'fa-jira' || name === 'fa-git' || name === 'fa-git-alt' ||
+                        name === 'fa-github-alt' || name === 'fa-gitlab' || name === 'fa-bitbucket' ||
+                        name === 'fa-stack-overflow' || name === 'fa-stack-exchange' || name === 'fa-hacker-news' ||
+                        name === 'fa-codepen' || name === 'fa-css3' || name === 'fa-html5' || name === 'fa-js') {
+                        prefix = 'fab';
+                    } else {
+                        prefix = 'fas';
+                    }
                 }
-                loaded++;
-                updateProgress(loaded, total);
-            }
-
-            // Urutkan berdasarkan nama
-            iconData.sort((a, b) => a.name.localeCompare(b.name));
+                return { name, prefix, display: name.replace('fa-', '') };
+            });
 
             renderIcons();
             updateStats();
-
-            statusText.innerHTML = `
-                <span class="success">✅ ${iconData.length} icon berhasil dimuat</span>
-                <span style="margin-left:auto; font-size:12px; color:#8d9bb0;">
-                    Klik icon untuk menyeleksi
-                </span>
-            `;
         }
 
-        function renderIcons(filter = '') {
+        function renderIcons() {
             const grid = document.getElementById('iconGrid');
-            const search = filter.toLowerCase().trim();
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            let filtered = allIcons;
 
-            let filtered = iconData;
+            // Filter by search
             if (search) {
-                filtered = iconData.filter(icon =>
-                    icon.name.toLowerCase().includes(search)
+                filtered = filtered.filter(icon =>
+                    icon.name.toLowerCase().includes(search) ||
+                    icon.display.toLowerCase().includes(search)
                 );
+            }
+
+            // Filter by type
+            if (currentFilter === 'fas') {
+                filtered = filtered.filter(icon => icon.prefix === 'fas');
+            } else if (currentFilter === 'far') {
+                filtered = filtered.filter(icon => icon.prefix === 'far');
+            } else if (currentFilter === 'fab') {
+                filtered = filtered.filter(icon => icon.prefix === 'fab');
+            } else if (currentFilter === 'selected') {
+                filtered = filtered.filter(icon => selectedIcons.has(icon.name));
             }
 
             if (filtered.length === 0) {
                 grid.innerHTML = `
-                    <div style="grid-column:1/-1; text-align:center; padding:40px; color:#8d9bb0;">
-                        🔍 Tidak ada icon yang cocok dengan "${filter}"
+                    <div style="grid-column:1/-1; text-align:center; padding:60px 20px; color:#8d9bb0;">
+                        <i class="fas fa-search" style="font-size:40px; display:block; margin-bottom:12px; opacity:0.3;"></i>
+                        <p style="font-size:16px; font-weight:500;">Tidak ada ikon yang ditemukan</p>
+                        <p style="font-size:13px;">Coba kata kunci lain atau reset filter</p>
                     </div>
                 `;
                 return;
             }
 
-            grid.innerHTML = filtered.map(icon => {
-                const isSelected = selectedIcons.has(icon.name);
-                const isDownloaded = downloadedIcons.has(icon.name);
-
-                // Ambil path SVG dari content
-                let svgContent = icon.svg || '';
-                // Bersihkan wrapper jika ada
-                const svgMatch = svgContent.match(/<svg[^>]*>([\s\S]*?)<\/svg>/);
-                const innerSvg = svgMatch ? svgMatch[1] : svgContent;
-
-                return `
-                    <div class="icon-item ${isSelected ? 'selected' : ''}" 
-                         data-icon="${icon.name}"
-                         onclick="toggleIcon('${icon.name}')"
-                         style="${isSelected ? 'border-color:#4b1dd6; background:rgba(75,29,214,0.04);' : ''}">
-                        <div class="preview">
-                            ${svgContent || `<i class="fas ${icon.name}"></i>`}
-                        </div>
-                        <div class="info">
-                            <div class="name">${icon.name}</div>
-                            <div class="size">${icon.size ? (icon.size/1024).toFixed(1)+' KB' : '~1.5 KB'}</div>
-                        </div>
-                        <button class="btn-download-sm ${isDownloaded ? 'downloaded' : ''}" 
-                                onclick="event.stopPropagation(); downloadSingleSVG('${icon.name}')">
-                            ${isDownloaded ? '✓' : '⬇'}
+            grid.innerHTML = filtered.map(icon => `
+                <div class="icon-card ${selectedIcons.has(icon.name) ? 'selected' : ''}" 
+                     onclick="toggleIcon('${icon.name}')"
+                     data-name="${icon.name}"
+                     data-prefix="${icon.prefix}">
+                    <div class="check-mark"><i class="fas fa-check"></i></div>
+                    <i class="${icon.prefix} ${icon.name} icon-preview"></i>
+                    <div class="icon-name">${icon.display}</div>
+                    <div class="download-options">
+                        <button class="dl-btn png" onclick="event.stopPropagation(); downloadIcon('${icon.name}', 'png')">
+                            <i class="fas fa-image"></i> PNG
+                        </button>
+                        <button class="dl-btn svg" onclick="event.stopPropagation(); downloadIcon('${icon.name}', 'svg')">
+                            <i class="fas fa-code"></i> SVG
                         </button>
                     </div>
-                `;
-            }).join('');
+                </div>
+            `).join('');
+        }
+
+        function updateStats() {
+            document.getElementById('totalIcons').textContent = allIcons.length;
+            document.getElementById('selectedCount').textContent = selectedIcons.size;
+
+            const actions = document.getElementById('selectedActions');
+            if (selectedIcons.size > 0) {
+                actions.classList.add('show');
+                document.getElementById('selectedInfo').textContent = selectedIcons.size;
+            } else {
+                actions.classList.remove('show');
+            }
         }
 
         // ================================================================
-        // INTERAKSI
+        // FUNGSI FILTER & SEARCH
+        // ================================================================
+
+        function setFilter(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === filter);
+            });
+            renderIcons();
+        }
+
+        function filterIcons() {
+            renderIcons();
+        }
+
+        // ================================================================
+        // FUNGSI SELECTION
         // ================================================================
 
         function toggleIcon(name) {
@@ -669,36 +909,63 @@
             } else {
                 selectedIcons.add(name);
             }
-            renderIcons(document.getElementById('filterInput').value);
+            renderIcons();
             updateStats();
         }
 
-        function selectAllIcons() {
-            iconData.forEach(icon => selectedIcons.add(icon.name));
-            renderIcons(document.getElementById('filterInput').value);
-            showToast(`✅ ${selectedIcons.size} icon dipilih`);
+        function selectAll() {
+            allIcons.forEach(icon => selectedIcons.add(icon.name));
+            renderIcons();
+            updateStats();
+            showToast(`✅ ${selectedIcons.size} ikon dipilih`);
         }
 
-        function deselectAllIcons() {
+        function clearSelection() {
             selectedIcons.clear();
-            renderIcons(document.getElementById('filterInput').value);
+            renderIcons();
+            updateStats();
             showToast('🗑️ Pilihan dihapus');
         }
 
         // ================================================================
-        // DOWNLOAD FUNGSI
+        // FUNGSI DOWNLOAD IKON (PNG / SVG)
         // ================================================================
 
-        function downloadSingleSVG(name) {
-            const icon = iconData.find(i => i.name === name);
-            if (!icon) {
-                showToast('❌ Icon tidak ditemukan', 2000);
-                return;
-            }
+        function downloadIcon(name, format) {
+            const icon = allIcons.find(i => i.name === name);
+            if (!icon) return;
 
-            try {
-                const blob = new Blob([icon.svg], { type: 'image/svg+xml' });
-                const url = URL.createObjectURL(blob);
+            const prefix = icon.prefix;
+            const fullName = `${prefix} ${name}`;
+
+            // Buat elemen untuk render
+            const canvas = document.createElement('canvas');
+            const size = 128;
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+
+            // Background transparan
+            ctx.clearRect(0, 0, size, size);
+
+            // Render icon ke canvas menggunakan SVG
+            const svgString = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+                    <style>
+                        .fa { font-family: 'Font Awesome 6 Free'; font-weight: 900; }
+                        .fab { font-family: 'Font Awesome 6 Brands'; font-weight: 400; }
+                        .far { font-family: 'Font Awesome 6 Free'; font-weight: 400; }
+                        .fas { font-family: 'Font Awesome 6 Free'; font-weight: 900; }
+                    </style>
+                    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" 
+                          font-size="72" fill="#1a2538" class="${prefix}">${name.replace('fa-', '')}</text>
+                </svg>
+            `;
+
+            // Untuk SVG, download langsung
+            if (format === 'svg') {
+                const svgBlob = new Blob([svgString], { type: 'image/svg+xml' });
+                const url = URL.createObjectURL(svgBlob);
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = `${name}.svg`;
@@ -706,87 +973,157 @@
                 a.click();
                 document.body.removeChild(a);
                 URL.revokeObjectURL(url);
-
-                downloadedIcons.add(name);
-                updateStats();
-                showToast(`✅ ${name}.svg berhasil diunduh`, 2000);
-                renderIcons(document.getElementById('filterInput').value);
-            } catch (error) {
-                showToast(`❌ Gagal mengunduh ${name}`, 2000);
-                console.error(error);
+                updateDownloadStats();
+                showToast(`✅ ${name}.svg berhasil diunduh`);
+                return;
             }
+
+            // Untuk PNG, render ke canvas
+            const img = new Image();
+            const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(svgBlob);
+
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, size, size);
+                const pngUrl = canvas.toDataURL('image/png');
+                const a = document.createElement('a');
+                a.href = pngUrl;
+                a.download = `${name}.png`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                updateDownloadStats();
+                showToast(`✅ ${name}.png berhasil diunduh`);
+            };
+
+            img.onerror = function() {
+                // Fallback: render teks sederhana
+                ctx.fillStyle = '#1a2538';
+                ctx.font = '48px "Font Awesome 6 Free"';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                const displayName = name.replace('fa-', '');
+                ctx.fillText(displayName, size / 2, size / 2);
+
+                const pngUrl = canvas.toDataURL('image/png');
+                const a = document.createElement('a');
+                a.href = pngUrl;
+                a.download = `${name}.png`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                updateDownloadStats();
+                showToast(`✅ ${name}.png berhasil diunduh (fallback)`);
+            };
+
+            img.src = url;
+        }
+
+        // ================================================================
+        // FUNGSI DOWNLOAD BATCH
+        // ================================================================
+
+        function downloadSelectedPNG() {
+            if (selectedIcons.size === 0) {
+                showToast('⚠️ Pilih ikon terlebih dahulu');
+                return;
+            }
+            selectedIcons.forEach(name => {
+                setTimeout(() => downloadIcon(name, 'png'), 200);
+            });
+            showToast(`📥 Mengunduh ${selectedIcons.size} ikon PNG...`);
         }
 
         function downloadSelectedSVG() {
-            const selected = iconData.filter(icon => selectedIcons.has(icon.name));
-
-            if (selected.length === 0) {
-                showToast('⚠️ Pilih minimal satu icon terlebih dahulu', 2500);
+            if (selectedIcons.size === 0) {
+                showToast('⚠️ Pilih ikon terlebih dahulu');
                 return;
             }
-
-            showToast(`⏳ Mengunduh ${selected.length} icon...`, 2000);
-
-            selected.forEach((icon, index) => {
-                setTimeout(() => {
-                    downloadSingleSVG(icon.name);
-                }, index * 300);
+            selectedIcons.forEach(name => {
+                setTimeout(() => downloadIcon(name, 'svg'), 200);
             });
+            showToast(`📥 Mengunduh ${selectedIcons.size} ikon SVG...`);
+        }
+
+        function downloadSelectedZIP() {
+            if (selectedIcons.size === 0) {
+                showToast('⚠️ Pilih ikon terlebih dahulu');
+                return;
+            }
+            // Download PNG + SVG untuk setiap ikon
+            selectedIcons.forEach(name => {
+                setTimeout(() => downloadIcon(name, 'png'), 100);
+                setTimeout(() => downloadIcon(name, 'svg'), 300);
+            });
+            showToast(`📥 Mengunduh ${selectedIcons.size} ikon (PNG+SVG)...`);
+        }
+
+        function downloadAllPNG() {
+            selectAll();
+            setTimeout(() => downloadSelectedPNG(), 300);
         }
 
         function downloadAllSVG() {
-            if (iconData.length === 0) {
-                showToast('⚠️ Belum ada icon yang dimuat', 2000);
-                return;
-            }
+            selectAll();
+            setTimeout(() => downloadSelectedSVG(), 300);
+        }
 
-            showToast(`⏳ Mengunduh semua ${iconData.length} icon...`, 3000);
-
-            iconData.forEach((icon, index) => {
-                setTimeout(() => {
-                    downloadSingleSVG(icon.name);
-                }, index * 250);
-            });
+        function downloadAllZIP() {
+            selectAll();
+            setTimeout(() => downloadSelectedZIP(), 300);
         }
 
         // ================================================================
-        // EXPORT DAFTAR
+        // FUNGSI UTILITY
         // ================================================================
 
-        function exportIconList() {
-            const list = iconData.map(icon => icon.name).join('\n');
-            const blob = new Blob([list], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'font-awesome-icons-list.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-            showToast('📄 Daftar icon berhasil diexport', 2000);
+        function updateDownloadStats() {
+            downloadCount++;
+            document.getElementById('downloadCount').textContent = downloadCount;
+            const now = new Date();
+            lastDownloadTime = now;
+            document.getElementById('lastDownload').textContent =
+                now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
         }
 
-        // ================================================================
-        // FILTER
-        // ================================================================
-
-        document.getElementById('filterInput').addEventListener('input', function() {
-            renderIcons(this.value);
-        });
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
 
         // ================================================================
         // INISIALISASI
         // ================================================================
 
         document.addEventListener('DOMContentLoaded', function() {
-            loadIcons();
+            // Load Font Awesome jika belum ada
+            if (!document.querySelector('link[href*="font-awesome"]')) {
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+                document.head.appendChild(link);
+            }
+
+            // Inisialisasi ikon
+            setTimeout(initIcons, 300);
         });
 
-        // Tampilkan toast untuk petunjuk awal
-        setTimeout(() => {
-            showToast('💡 Klik icon untuk menyeleksi, lalu klik Download Terseleksi', 4000);
-        }, 1500);
+        // Keyboard shortcut
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'a') {
+                e.preventDefault();
+                selectAll();
+            }
+            if (e.key === 'Escape') {
+                clearSelection();
+            }
+        });
     </script>
 </body>
 </html>
